@@ -1,18 +1,23 @@
 <br>
+
+
 <div class="convert">
-    <input type="number" id="first-input" placeholder="100.0"> 
-    <select id="first-select">
+    <input type="number" id="first-input" [formControl]="val1" [placeholder]="val1.value" (input)="onCurrencyChange(val2, val1, curr1, curr2)">
+    <select id="first-select" [formControl]="curr1" (change)="onCurrencyChange(val2, val1, curr1, curr2)">
         <option>UAH</option>
         <option>USD</option>
         <option>EUR</option>
         <option>PLN</option>
     </select>
+
     <br>
-    <input type="number" id="second-input" placeholder="100.0"> 
-    <select id="second-select">
+    <input type="number" id="second-input" [formControl]="val2" [placeholder]="val2.value" (input)="onCurrencyChange(val1, val2, curr2, curr1)">
+        <select id="second-select" [formControl]="curr2" (change)="onCurrencyChange(val1, val2, curr2, curr1)">
         <option>USD</option>
         <option>UAH</option>
         <option>EUR</option>
         <option>PLN</option>
     </select>
+
 </div>
+

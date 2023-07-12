@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ConvertComponent } from './convert/convert.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exchange';
+  usd: string = '';
+  eur: string = '';
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(){
+  }
 }
