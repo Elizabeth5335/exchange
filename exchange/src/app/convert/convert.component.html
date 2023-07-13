@@ -24,7 +24,7 @@
             <input class="input" type="number" id="second-input" [formControl]="val2" [placeholder]="val2.value" (input)="onCurrencyChange(val1, val2, curr2, curr1)">
             <div class="currency-select">
                 <div class="divider"></div>
-                <select class="select" id="first-select" [formControl]="curr2" (change)="onCurrencyChange(val1, val2, curr2, curr1); changeDefVal();">
+                <select class="select" id="first-select" [formControl]="curr2" (change)="onCurrencyChange(val2, val1, curr1, curr2); changeDefVal();">
                     <option>UAH</option>
                     <option>USD</option>
                     <option>EUR</option>

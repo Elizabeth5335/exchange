@@ -26,7 +26,7 @@ export class ConvertComponent {
 
 
   async getRate(curr1: string | null, curr2: string) {
-    const url = `https://v6.exchangerate-api.com/v6/da14864407c36d688f8b4427/latest/${curr1}`;
+    const url = `https://v6.exchangerate-api.com/v6/66dfbed4d59b2adb14ba3230/latest/${curr1}`;
   
     try {
       const response = await this.http.get<any>(url).toPromise();
@@ -46,6 +46,9 @@ export class ConvertComponent {
 
 
   async onCurrencyChange(valueToChange: any, value: any, curr1: any, curr2: any): Promise<void> {
+    if(value.value===null){
+      value.setValue('0');
+    }
     if(curr2.value){
       await this.getRate(curr1.value, curr2.value)
     }
@@ -63,7 +66,7 @@ export class ConvertComponent {
 
 
   async ngOnInit(){   
-    this.http.get<any>('https://v6.exchangerate-api.com/v6/da14864407c36d688f8b4427/latest/USD').subscribe(
+    this.http.get<any>('https://v6.exchangerate-api.com/v6/66dfbed4d59b2adb14ba3230/latest/USD').subscribe(
       (response) => {
         this.val2 = new FormControl(response.conversion_rates.UAH);
       },
