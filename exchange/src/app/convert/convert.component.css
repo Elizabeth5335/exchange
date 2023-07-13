@@ -1,6 +1,7 @@
 .convert, #rate{
     text-align: center;
     width: 400px !important;
+    max-width: 80vw;
     margin: auto !important;
     padding-bottom: 0;
     position: relative;
